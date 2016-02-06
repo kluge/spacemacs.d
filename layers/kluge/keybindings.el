@@ -4,4 +4,12 @@
            ("ö w" . kluge-write-whole-file)
            ("ö W" . evil-write-all)
            ("ö b" . helm-mini)
-           ("ö f" . spacemacs/helm-find-files))
+           ("ö f" . spacemacs/helm-find-files)
+           ("ö m" . imenu)
+           ("M-j" . next-error)
+           ("M-k" . previous-error))
+
+(bind-keys :map evil-insert-state-map
+          ("C-a" . spacemacs/smart-move-beginning-of-line)
+          ("C-e" . end-of-line)
+          ("C-k" . kill-line))
