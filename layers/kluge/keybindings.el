@@ -1,3 +1,4 @@
+(global-set-key (kbd "<f2>") 'shell-pop-ansi-term)
 (define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
 
 (bind-keys :map evil-motion-state-map
