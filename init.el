@@ -252,6 +252,8 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (setq frame-title-format '("" "%b - Emacs"))
   (setq custom-file "~/.spacemacs.d/custom.el")
+
+  (setq-default git-magit-status-fullscreen t)
   )
 
 (defun dotspacemacs/user-config ()
