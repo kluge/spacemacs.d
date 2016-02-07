@@ -35,6 +35,8 @@ values."
      gtags
      haskell
      markdown
+     mu4e
+     mu4e-kluge
      org
      python
      (shell :variables
