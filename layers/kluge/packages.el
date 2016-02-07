@@ -41,7 +41,10 @@
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c b") 'org-iswitchb)
   (global-set-key (kbd "C-c l") 'org-store-link)
-  (global-set-key (kbd "C-c c") 'org-capture)
+
+  (evil-define-key 'normal org-mode-map
+    (kbd "M-<return>") 'kluge-org-meta-return
+    (kbd "M-S-<return>") 'kluge-org-insert-todo-heading)
 
   (setq org-capture-templates
         '(("t" "Todo" entry (file "~/org/inbox.org")
