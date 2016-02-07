@@ -15,6 +15,8 @@
   ;; Update the index every 5 minutes
   (setq mu4e-update-interval 300)
 
+  (setq mu4e-confirm-quit nil)
+
   (setq message-send-mail-function 'smtpmail-send-it
         smtpmail-smtp-server        "mail.kapsi.fi"
         smtpmail-stream-type        'starttls
