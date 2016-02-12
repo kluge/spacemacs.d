@@ -24,7 +24,9 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      asciidoc
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-return-key-behavior nil)
      better-defaults
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode

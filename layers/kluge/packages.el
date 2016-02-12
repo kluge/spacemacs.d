@@ -1,8 +1,10 @@
 (setq kluge-packages '(avy
                        cc-mode
+                       company-mode
                        dired+
                        evil
-                       org))
+                       org
+                       yasnippet))
 
 (defun kluge/post-init-avy ()
   (define-key evil-motion-state-map (kbd "g SPC") 'avy-goto-char))
@@ -13,6 +15,10 @@
                   (c-offsets-alist
                    (innamespace . 0))))
    (setq c-default-style "kluge"))
+
+(defun kluge/post-init-company-mode ()
+  (bind-key "C-l" nil company-active-map)
+  (bind-key "C-s" 'company-search-candidates company-active-map))
 
 (defun kluge/init-dired+ ()
   (use-package dired+
@@ -61,3 +67,6 @@
   ;; Start in insert state in capture mode
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   )
+
+(defun kluge/post-init-yasnippet ()
+  (bind-key "C-l" 'yas-expand yas-minor-mode-map))
