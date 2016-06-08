@@ -9,16 +9,16 @@
   (interactive)
   (evil-write nil nil))
 
-(evil-define-command kluge-org-meta-return (&optional count argument)
+(defun kluge-org-meta-return ()
   "org-meta-return and insert state"
-  :repeat t
+  (interactive)
   (end-of-line)
   (org-meta-return)
   (evil-insert 1))
 
-(evil-define-command kluge-org-insert-todo-heading (&optional count argument)
+(defun kluge-org-insert-todo-heading ()
   "org-meta-return and insert state"
-  :repeat t
+  (interactive)
   (end-of-line)
   (org-insert-todo-heading argument)
   (evil-insert 1))

@@ -4,8 +4,8 @@
 (bind-keys :map evil-motion-state-map
            ("ö w" . kluge-write-whole-file)
            ("ö W" . evil-write-all)
-           ("ö b" . helm-mini)
-           ("ö f" . spacemacs/helm-find-files)
+           ("ö b" . ivy-switch-buffer)
+           ("ö f" . counsel-find-file)
            ("ö m" . imenu)
            ("M-j" . next-error)
            ("M-k" . previous-error))
