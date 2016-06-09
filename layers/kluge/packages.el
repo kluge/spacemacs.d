@@ -78,7 +78,8 @@
   (use-package modern-cpp-font-lock
     :ensure t
     :config
-    (modern-c++-font-lock-global-mode t)))
+    (modern-c++-font-lock-global-mode t)
+    (spacemacs|diminish modern-c++-font-lock-mode)))
 
 (defun kluge/post-init-yasnippet ()
   (bind-key "C-l" 'yas-expand yas-minor-mode-map))
