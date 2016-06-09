@@ -3,6 +3,7 @@
                        company-mode
                        dired+
                        evil
+                       ivy
                        org
                        modern-cpp-font-lock
                        yasnippet))
@@ -33,6 +34,10 @@
   ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next))
+
+(defun kluge/post-init-ivy ()
+  ;; Wrap aroud in beginning and end of candidate list
+  (setq ivy-wrap t))
 
 (defun kluge/post-init-org ()
   (setq org-agenda-files '("~/org"))
