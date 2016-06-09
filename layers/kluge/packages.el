@@ -4,6 +4,7 @@
                        dired+
                        evil
                        org
+                       modern-cpp-font-lock
                        yasnippet))
 
 (defun kluge/post-init-avy ()
@@ -67,6 +68,12 @@
   ;; Start in insert state in capture mode
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   )
+
+(defun kluge/init-modern-cpp-font-lock ()
+  (use-package modern-cpp-font-lock
+    :ensure t
+    :config
+    (modern-c++-font-lock-global-mode t)))
 
 (defun kluge/post-init-yasnippet ()
   (bind-key "C-l" 'yas-expand yas-minor-mode-map))
