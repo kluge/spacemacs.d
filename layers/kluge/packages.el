@@ -4,6 +4,7 @@
                        dired+
                        evil
                        ivy
+                       ledger-mode
                        org
                        modern-cpp-font-lock
                        yasnippet))
@@ -38,6 +39,17 @@
 (defun kluge/post-init-ivy ()
   ;; Wrap aroud in beginning and end of candidate list
   (setq ivy-wrap t))
+
+(defun kluge-ledger-insert-assets-tili ()
+  (interactive)
+  (ledger-navigate-end-of-xact)
+  (evil-insert-newline-below)
+  (indent-according-to-mode)
+  (insert "a:tili"))
+
+(defun kluge/post-init-ledger-mode ()
+  (setq ledger-highlight-xact-under-point nil)
+  (evil-define-key 'normal ledger-mode-map (kbd "ö t") 'kluge-ledger-insert-assets-tili))
 
 (defun kluge/post-init-org ()
   (setq org-agenda-files '("~/org"))

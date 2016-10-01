@@ -46,6 +46,7 @@ values."
             c-c++-enable-clang-support t)
      emacs-lisp
      evil-commentary
+     finance
      git
      gtags
      haskell
