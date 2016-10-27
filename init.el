@@ -308,6 +308,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-hook 'git-commit-setup-hook 'evil-insert-state)
   (spacemacs/set-leader-keys "SPC" 'avy-goto-word-1)
+  (add-to-list 'auto-mode-alist '("\\.pro\\'" . text-mode)) ; less bothersome for qmake than IDLWAVE
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
