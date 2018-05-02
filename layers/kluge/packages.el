@@ -6,6 +6,7 @@
                        ivy
                        ledger-mode
                        org
+                       magit
                        modern-cpp-font-lock
                        yasnippet))
 
@@ -85,6 +86,9 @@
   ;; Start in insert state in capture mode
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   )
+
+(defun kluge/post-init-magit ()
+  (setq magit-revision-show-gravatars nil))
 
 (defun kluge/init-modern-cpp-font-lock ()
   (use-package modern-cpp-font-lock
