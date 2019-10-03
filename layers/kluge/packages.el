@@ -1,7 +1,6 @@
 (setq kluge-packages '(avy
                        cc-mode
                        company-mode
-                       dired+
                        evil
                        ivy
                        ledger-mode
