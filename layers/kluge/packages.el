@@ -84,6 +84,8 @@
 
   ;; Start in insert state in capture mode
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
+  (add-hook 'org-mode-hook 'auto-fill-mode)
   )
 
 (defun kluge/post-init-magit ()
