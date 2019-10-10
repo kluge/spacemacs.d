@@ -34,7 +34,9 @@
 (defun kluge/post-init-evil ()
   ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
   (define-key evil-normal-state-map (kbd "M-.") nil)
-  (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next))
+  (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
+  ;; Use other jump handlers instead of evil-goto-definition
+  (setq spacemacs-default-jump-handlers (delete 'evil-goto-definition spacemacs-default-jump-handlers)))
 
 (defun kluge/post-init-ivy ()
   ;; Wrap aroud in beginning and end of candidate list

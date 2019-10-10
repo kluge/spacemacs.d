@@ -49,7 +49,6 @@ This function should only modify configuration layer settings."
      evil-commentary
      finance
      git
-     gtags
      haskell
      ivy
      markdown
