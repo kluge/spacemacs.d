@@ -70,7 +70,7 @@
   (setq org-log-into-drawer t)
 
   (global-set-key (kbd "C-c a") 'org-agenda)
-  (global-set-key (kbd "C-c b") 'org-iswitchb)
+  (global-set-key (kbd "C-c b") 'org-switchb)
   (global-set-key (kbd "C-c l") 'org-store-link)
 
   (evil-define-key 'normal org-mode-map
