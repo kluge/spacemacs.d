@@ -78,8 +78,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-search-highlight-persist
-                                    org-bullets
+   dotspacemacs-excluded-packages '(org-bullets
                                     vi-tilde-fringe)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -481,6 +480,7 @@ before packages are loaded."
   (add-hook 'git-commit-setup-hook 'evil-insert-state)
   (spacemacs/set-leader-keys "SPC" 'evil-avy-goto-char-timer)
   (add-to-list 'auto-mode-alist '("\\.pro\\'" . text-mode)) ; less bothersome for qmake than IDLWAVE
+  (setq evil-ex-search-persistent-highlight nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
