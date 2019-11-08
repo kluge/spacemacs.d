@@ -54,7 +54,8 @@ This function should only modify configuration layer settings."
      markdown
      mu4e
      mu4e-kluge
-     org
+     (org :variables
+          org-enable-org-journal-support t)
      python
      (shell :variables
             shell-default-height 30

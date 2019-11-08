@@ -54,10 +54,15 @@
   (evil-define-key 'normal ledger-mode-map (kbd "ö t") 'kluge-ledger-insert-assets-tili))
 
 (defun kluge/post-init-org ()
+  (setq org-adapt-indentation nil) ; Don't indent text body under headers
+
   (setq org-agenda-files '("~/org"))
   (setq org-default-notes-file "~/org/inbox.org")
   (setq org-refile-targets '((nil . (:maxlevel . 3))
                              (org-agenda-files . (:maxlevel . 1))))
+  (setq org-journal-dir "~/journal/")
+  (setq org-journal-file-format "%Y-%m-%d.org")
+  (add-hook 'org-journal-after-entry-create-hook 'kluge-open-below-once)
 
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "|" "DONE(d!)" "CANCELED(c@)")))

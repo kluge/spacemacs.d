@@ -23,6 +23,11 @@
   (org-insert-todo-heading argument)
   (evil-insert 1))
 
+(defun kluge-open-below-once ()
+  "Emulate pressing o in normal state"
+  (interactive)
+  (evil-open-below 1))
+
 ;; Utility functions
 
 (defun delete-from-list (list-var item)
