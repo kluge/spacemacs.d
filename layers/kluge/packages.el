@@ -72,6 +72,8 @@
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c b") 'org-switchb)
   (global-set-key (kbd "C-c l") 'org-store-link)
+  (spacemacs/set-leader-keys "ot"
+    '(lambda () (interactive) (find-file "~/org/todo.org")))
 
   (evil-define-key 'normal org-mode-map
     (kbd "M-<return>") 'kluge-org-meta-return
