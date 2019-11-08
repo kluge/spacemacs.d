@@ -57,7 +57,7 @@
   (setq org-adapt-indentation nil) ; Don't indent text body under headers
 
   (setq org-agenda-files '("~/org"))
-  (setq org-default-notes-file "~/org/inbox.org")
+  (setq org-default-notes-file "~/org/backlog.org")
   (setq org-refile-targets '((nil . (:maxlevel . 3))
                              (org-agenda-files . (:maxlevel . 1))))
   (setq org-journal-dir "~/journal/")
@@ -65,7 +65,7 @@
   (add-hook 'org-journal-after-entry-create-hook 'kluge-open-below-once)
 
   (setq org-todo-keywords
-        '((sequence "TODO(t!)" "|" "DONE(d!)" "CANCELED(c@)")))
+        '((sequence "BACKLOG(b!)" "TODO(t!)" "DOING(s!)" "|" "DONE(d!)")))
   ;; Log date when task state is changed
   (setq org-log-into-drawer t)
 
@@ -75,19 +75,20 @@
 
   (evil-define-key 'normal org-mode-map
     (kbd "M-<return>") 'kluge-org-meta-return
-    (kbd "M-S-<return>") 'kluge-org-insert-todo-heading)
+    (kbd "M-S-<return>") 'kluge-org-insert-todo-heading
+    (kbd "ö t") 'org-todo
+    )
 
   (setq org-capture-templates
-        '(("t" "Todo" entry (file "~/org/inbox.org")
+        '(("b" "Backlog" entry (file "~/org/backlog.org")
+           "* BACKLOG %?")
+          ("B" "Backlog with link" entry (file "~/org/backlog.org")
+           "* BACKLOG %?\n%U\n%i\n%a")
+          ("t" "Todo" entry (file "~/org/todo.org")
            "* TODO %?\n%U\n%i")
-          ("l" "Todo with link" entry (file "~/org/inbox.org")
+          ("T" "Todo with link" entry (file "~/org/todo.org")
            "* TODO %?\n%U\n%i\n%a")
-          ("n" "Note" entry (file "~/org/inbox.org")
-           "* %?\n%U\n%i\n")
-          ("m" "Note with link" entry (file "~/org/inbox.org")
-           "* %?\n%U\n%i\n%a")
-          ("j" "Journal" entry (file+datetree "~/journal/2015.org")
-           "* %U\n%?")))
+          ))
 
   ;; Start in insert state in capture mode
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
