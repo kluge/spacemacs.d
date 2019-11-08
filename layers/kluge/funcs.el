@@ -16,11 +16,11 @@
   (org-meta-return)
   (evil-insert 1))
 
-(defun kluge-org-insert-todo-heading ()
+(defun kluge-org-insert-todo-heading (arg)
   "org-meta-return and insert state"
-  (interactive)
+  (interactive "P")
   (end-of-line)
-  (org-insert-todo-heading argument)
+  (org-insert-todo-heading arg)
   (evil-insert 1))
 
 (defun kluge-open-below-once ()
