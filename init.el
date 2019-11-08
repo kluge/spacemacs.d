@@ -477,7 +477,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (add-hook 'git-commit-setup-hook 'evil-insert-state)
-  (spacemacs/set-leader-keys "SPC" 'avy-goto-word-1)
+  (spacemacs/set-leader-keys "SPC" 'evil-avy-goto-char-timer)
   (add-to-list 'auto-mode-alist '("\\.pro\\'" . text-mode)) ; less bothersome for qmake than IDLWAVE
   )
 
