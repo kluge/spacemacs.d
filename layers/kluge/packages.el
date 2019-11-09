@@ -68,6 +68,7 @@
         '((sequence "BACKLOG(b!)" "TODO(t!)" "DOING(s!)" "|" "DONE(d!)")))
   ;; Log date when task state is changed
   (setq org-log-into-drawer t)
+  (setq org-agenda-todo-ignore-scheduled 'future)
 
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c b") 'org-switchb)
