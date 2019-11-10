@@ -15,5 +15,5 @@
           ("C-e" . end-of-line)
           ("C-k" . kill-line))
 
-(bind-key "<apps>" 'smex)
-(bind-key "<menu>" 'smex)
+(bind-key "<apps>" 'counsel-M-x)
+(bind-key "<menu>" 'counsel-M-x)
