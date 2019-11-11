@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      syntax-checking
      version-control
+     yaml
      kluge
      )
 
