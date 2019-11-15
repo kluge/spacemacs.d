@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      git
      haskell
      ivy
+     javascript
      markdown
      mu4e
      mu4e-kluge
