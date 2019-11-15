@@ -84,7 +84,7 @@
 
   (setq org-capture-templates
         '(("b" "Backlog" entry (file "~/org/backlog.org")
-           "* BACKLOG %?")
+           "* BACKLOG %?\n%U\n%i")
           ("B" "Backlog with link" entry (file "~/org/backlog.org")
            "* BACKLOG %?\n%U\n%i\n%a")
           ("t" "Todo" entry (file "~/org/todo.org")
