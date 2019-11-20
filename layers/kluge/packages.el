@@ -53,6 +53,9 @@
   (setq ledger-highlight-xact-under-point nil)
   (evil-define-key 'normal ledger-mode-map (kbd "ö t") 'kluge-ledger-insert-assets-tili))
 
+(defun kluge/pre-init-org ()
+  (setq org-export-backends '(ascii html md latex odt)))
+
 (defun kluge/post-init-org ()
   (setq org-adapt-indentation nil) ; Don't indent text body under headers
 
