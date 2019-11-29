@@ -68,7 +68,7 @@
   (add-hook 'org-journal-after-entry-create-hook 'kluge-open-below-once)
 
   (setq org-todo-keywords
-        '((sequence "BACKLOG(b!)" "TODO(t!)" "DOING(s!)" "|" "DONE(d!)")))
+        '((sequence "BACKLOG(b!)" "TODO(t!)" "DOING(s!)" "WAITING(w!)" "|" "DONE(d!)")))
   ;; Log date when task state is changed
   (setq org-log-into-drawer t)
   (setq org-agenda-todo-ignore-scheduled 'future)
