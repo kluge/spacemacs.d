@@ -4,9 +4,9 @@
                        evil
                        ivy
                        ledger-mode
-                       org
                        magit
                        modern-cpp-font-lock
+                       org
                        yasnippet))
 
 (defun kluge/post-init-avy ()
@@ -52,6 +52,16 @@
 (defun kluge/post-init-ledger-mode ()
   (setq ledger-highlight-xact-under-point nil)
   (evil-define-key 'normal ledger-mode-map (kbd "ö t") 'kluge-ledger-insert-assets-tili))
+
+(defun kluge/post-init-magit ()
+  (setq magit-revision-show-gravatars nil))
+
+(defun kluge/init-modern-cpp-font-lock ()
+  (use-package modern-cpp-font-lock
+    :ensure t
+    :config
+    (modern-c++-font-lock-global-mode t)
+    (spacemacs|diminish modern-c++-font-lock-mode)))
 
 (defun kluge/pre-init-org ()
   (setq org-export-backends '(ascii html md latex odt)))
@@ -102,15 +112,6 @@
   (add-hook 'org-mode-hook 'auto-fill-mode)
   )
 
-(defun kluge/post-init-magit ()
-  (setq magit-revision-show-gravatars nil))
-
-(defun kluge/init-modern-cpp-font-lock ()
-  (use-package modern-cpp-font-lock
-    :ensure t
-    :config
-    (modern-c++-font-lock-global-mode t)
-    (spacemacs|diminish modern-c++-font-lock-mode)))
 
 (defun kluge/post-init-yasnippet ()
   (bind-key "C-l" 'yas-expand yas-minor-mode-map))
