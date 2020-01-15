@@ -7,6 +7,7 @@
                        magit
                        modern-cpp-font-lock
                        org
+                       projectile
                        yasnippet))
 
 (defun kluge/post-init-avy ()
@@ -112,6 +113,9 @@
   (add-hook 'org-mode-hook 'auto-fill-mode)
   )
 
+(defun kluge/post-init-projectile ()
+  ;; Use alien tools, but also follow .projectile ignores
+  (setq projectile-indexing-method 'hybrid))
 
 (defun kluge/post-init-yasnippet ()
   (bind-key "C-l" 'yas-expand yas-minor-mode-map))
