@@ -54,6 +54,10 @@ This function should only modify configuration layer settings."
      haskell
      ivy
      javascript
+     (lsp :variables
+          lsp-enable-snippet nil
+          lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable nil)
      markdown
      mu4e
      mu4e-kluge
