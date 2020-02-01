@@ -2,6 +2,7 @@
                        cc-mode
                        company-mode
                        evil
+                       hippie-exp
                        ivy
                        ledger-mode
                        magit
@@ -38,6 +39,9 @@
   (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
   ;; Use other jump handlers instead of evil-goto-definition
   (setq spacemacs-default-jump-handlers (delete 'evil-goto-definition spacemacs-default-jump-handlers)))
+
+(defun kluge/post-init-hippie-exp ()
+  (define-key evil-insert-state-map (kbd "C-SPC") 'hippie-expand))
 
 (defun kluge/post-init-ivy ()
   ;; Wrap aroud in beginning and end of candidate list
@@ -118,4 +122,4 @@
   (setq projectile-indexing-method 'hybrid))
 
 (defun kluge/post-init-yasnippet ()
-  (bind-key "C-l" 'yas-expand yas-minor-mode-map))
+  (setq yas-snippet-dirs '("~/.spacemacs.d/snippets")))
