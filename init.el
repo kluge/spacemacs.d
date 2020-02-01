@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
      evil-commentary
      finance
      git
+     graphviz
      haskell
      ivy
      javascript
