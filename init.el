@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      cmake
+     dash
      emacs-lisp
      evil-commentary
      finance
