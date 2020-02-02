@@ -56,8 +56,7 @@ This function should only modify configuration layer settings."
      javascript
      (lsp :variables
           lsp-enable-snippet nil
-          lsp-ui-doc-enable nil
-          lsp-ui-sideline-enable nil)
+          lsp-ui-doc-position 'top)
      markdown
      mu4e
      mu4e-kluge
