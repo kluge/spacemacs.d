@@ -124,4 +124,8 @@
   (setq projectile-indexing-method 'hybrid))
 
 (defun kluge/post-init-yasnippet ()
-  (setq yas-snippet-dirs '("~/.spacemacs.d/snippets")))
+  (setq yas-snippet-dirs '("~/.spacemacs.d/snippets"))
+  (add-hook 'yas-before-expand-snippet-hook
+            'kluge--bind-tab-to-yas-next-field)
+  (add-hook 'yas-after-exit-snippet-hook
+            'kluge--restore-tab-binding-after-exit-snippet))

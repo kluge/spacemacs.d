@@ -38,3 +38,27 @@
 (defun delete-from-list (list-var item)
   "Delete item from a list variable."
   (set list-var (delete item (symbol-value list-var))))
+
+;; Don't use TAB in company-mode while expanding yasnippets. (Heavily based on
+;; the the way Spacemacs disables smartparens temporarily during snippet
+;; expansion.)
+(defvar kluge--original-tab-binding-in-company-active-map nil)
+(defvar kluge--yasnippet-expanding nil
+  "Whether the snippet expansion is in progress.")
+
+(defun kluge--bind-tab-to-yas-next-field ()
+  "Handler for `yas-before-expand-snippet-hook'.
+Bind TAB to yas-next-field for company-active-map and remember the initial binding."
+  ;; Remember the initial smartparens state only once, when expanding a top-level snippet.
+  (unless kluge--yasnippet-expanding
+    (setq kluge--yasnippet-expanding t
+          kluge--original-tab-binding-in-company-active-map (lookup-key company-active-map (kbd "TAB")))
+    (define-key company-active-map (kbd "TAB") 'yas-next-field)
+    (define-key company-active-map (kbd "<tab>") 'yas-next-field)))
+
+(defun kluge--restore-tab-binding-after-exit-snippet ()
+  "Handler for `yas-after-exit-snippet-hook'.
+ Restore the original bindings of TAB in company-active-map."
+  (setq kluge--yasnippet-expanding nil)
+  (define-key company-active-map (kbd "TAB") kluge--original-tab-binding-in-company-active-map)
+  (define-key company-active-map (kbd "<tab>") kluge--original-tab-binding-in-company-active-map))
