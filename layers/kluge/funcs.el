@@ -1,3 +1,8 @@
+(defun kluge-append-semicolon-at-eol ()
+  (interactive)
+  (end-of-line)
+  (insert ";"))
+
 (defun kluge-insert-date (arg)
   (interactive "P")
   (insert (cond

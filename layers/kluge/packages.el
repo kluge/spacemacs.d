@@ -37,6 +37,8 @@
   ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
+
+  (evil-define-key '(normal insert) c++-mode-map (kbd "M-RET") 'kluge-append-semicolon-at-eol)
   ;; Use other jump handlers instead of evil-goto-definition
   (setq spacemacs-default-jump-handlers (delete 'evil-goto-definition spacemacs-default-jump-handlers)))
 
