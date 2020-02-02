@@ -1,6 +1,5 @@
 (setq kluge-packages '(avy
                        cc-mode
-                       company-mode
                        evil
                        hippie-exp
                        ivy
@@ -20,10 +19,6 @@
                   (c-offsets-alist
                    (innamespace . 0))))
    (setq c-default-style "kluge"))
-
-(defun kluge/post-init-company-mode ()
-  (bind-key "C-l" nil company-active-map)
-  (bind-key "C-s" 'company-search-candidates company-active-map))
 
 (defun kluge/init-dired+ ()
   (use-package dired+
