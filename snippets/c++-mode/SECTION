@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: SECTION
+# key: ts
+# --
+SECTION ("$1") {
+    $0
+}
