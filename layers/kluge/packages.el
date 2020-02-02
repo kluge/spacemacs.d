@@ -1,5 +1,6 @@
 (setq kluge-packages '(avy
                        cc-mode
+                       dired
                        evil
                        hippie-exp
                        ivy
@@ -20,13 +21,10 @@
                    (innamespace . 0))))
    (setq c-default-style "kluge"))
 
-(defun kluge/init-dired+ ()
-  (use-package dired+
-    :init
+(defun kluge/post-init-dired ()
     (setq-default dired-listing-switches "-alh")
     (setq dired-recursive-copies 'always) ; Don't prompt for copying directories
-    :config
-    (define-key dired-mode-map (kbd "-") 'dired-up-directory)))
+    (define-key dired-mode-map (kbd "-") 'dired-up-directory))
 
 (defun kluge/post-init-evil ()
   ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
