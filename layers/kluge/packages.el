@@ -5,6 +5,7 @@
                        hippie-exp
                        ivy
                        ledger-mode
+                       lsp
                        magit
                        modern-cpp-font-lock
                        org
@@ -52,6 +53,14 @@
 (defun kluge/post-init-ledger-mode ()
   (setq ledger-highlight-xact-under-point nil)
   (evil-define-key 'normal ledger-mode-map (kbd "ö t") 'kluge-ledger-insert-assets-tili))
+
+(defun kluge/post-init-lsp ()
+  (let ((clangd-exe (or
+                    (executable-find "clangd")
+                    (executable-find "clangd-10")
+                    (executable-find "clangd-9"))))
+    (when clangd-exe
+      (setq lsp-clients-clangd-executable clangd-exe))))
 
 (defun kluge/post-init-magit ()
   (setq magit-revision-show-gravatars nil))
