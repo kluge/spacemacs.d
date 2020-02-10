@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: const auto ref
+# key: car
+# --
+const auto`(when (not (equal (user-login-name) "kluge")) " ")`& $0
