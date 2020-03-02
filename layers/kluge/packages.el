@@ -1,5 +1,6 @@
 (setq kluge-packages '(avy
                        cc-mode
+                       cmake-mode
                        dired
                        evil
                        hippie-exp
@@ -21,6 +22,9 @@
                   (c-offsets-alist
                    (innamespace . 0))))
    (setq c-default-style "kluge"))
+
+(defun kluge/post-init-cmake-mode ()
+  (setq cmake-tab-width 4))
 
 (defun kluge/post-init-dired ()
     (setq-default dired-listing-switches "-alh")
