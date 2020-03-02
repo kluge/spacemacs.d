@@ -7,6 +7,7 @@
            ("ö b" . ivy-switch-buffer)
            ("ö f" . counsel-find-file)
            ("ö m" . imenu)
+           ("ö e" . spacemacs/auto-yasnippet-expand)
            ("M-j" . next-error)
            ("M-k" . previous-error))
 
