@@ -32,6 +32,7 @@
     (define-key dired-mode-map (kbd "-") 'dired-up-directory))
 
 (defun kluge/post-init-evil ()
+  (setq-default evil-shift-width 4)
   ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
