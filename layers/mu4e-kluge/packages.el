@@ -24,8 +24,7 @@
         smtpmail-smtp-service       587)
 
   ;; Private options
-  (add-hook 'mu4e-main-mode-hook (lambda ()
-                                   (load-file "~/.spacemacs.d/layers/mu4e-kluge/mu4e-kluge-private.el.gpg")))
+  (advice-add 'mu4e :before 'kluge-mu4e-load-private-settings)
 
   ;; UI options
   (setq mu4e-view-show-addresses t)

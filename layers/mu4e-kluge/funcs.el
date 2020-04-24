@@ -1,3 +1,6 @@
+(defun kluge-mu4e-load-private-settings (&optional background)
+  (interactive)
+  (require 'kluge-mu4e-private "~/.spacemacs.d/layers/mu4e-kluge/mu4e-kluge-private.el.gpg" nil))
 ;; Canning spam
 (defun kluge-mu4e-headers-spam ()
   "Move the current message to spam folder."
