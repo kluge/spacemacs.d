@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
           lsp-enable-snippet nil
           lsp-ui-doc-position 'top)
      markdown
-     mu4e
+     (mu4e :variables mu4e-installation-path "/usr/share/emacs/site-lisp")
      mu4e-kluge
      (org :variables
           org-enable-org-journal-support t)
