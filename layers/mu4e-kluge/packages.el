@@ -1,6 +1,7 @@
 (setq mu4e-kluge-packages '(mu4e))
 
 (defun mu4e-kluge/pre-init-mu4e ()
+  (spacemacs/set-leader-keys "oi" 'kluge-mu4e-go-to-inbox)
   ;; Basic options
   (setq mu4e-maildir "/home/kluge/maildir-kapsi")
   (setq mu4e-attachment-dir "~/incoming")
