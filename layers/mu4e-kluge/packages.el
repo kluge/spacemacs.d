@@ -32,6 +32,9 @@
   (setq mu4e-headers-date-format "%Y-%m-%d")
   (setq mu4e-date-format-long "%A %Y-%m-%d %T %z (%Z)")
 
+  ;; Pick HTML over plaintext less often
+  (setq mu4e-view-html-plaintext-ratio-heuristic 50)
+
   ;; Don't keep sent message buffers around
   (setq message-kill-buffer-on-exit t)
 
