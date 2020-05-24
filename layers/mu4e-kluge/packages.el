@@ -11,6 +11,8 @@
         mu4e-trash-folder  "/trash"
         mu4e-refile-folder "/archive")
 
+  ;; To avoid duplicate UIDs with mbsync
+  (setq mu4e-change-filenames-when-moving t)
   ;; Don't run a mail command, just update index
   (setq mu4e-get-mail-command "true")
   ;; Update the index every 5 minutes
