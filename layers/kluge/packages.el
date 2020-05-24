@@ -128,7 +128,8 @@
 
 (defun kluge/post-init-projectile ()
   ;; Use alien tools, but also follow .projectile ignores
-  (setq projectile-indexing-method 'hybrid))
+  ;(setq projectile-indexing-method 'hybrid)
+  )
 
 (defun kluge/post-init-yasnippet ()
   (setq yas-snippet-dirs '("~/.spacemacs.d/snippets"))
