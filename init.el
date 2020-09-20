@@ -85,7 +85,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(org-bullets
+   dotspacemacs-excluded-packages '(org-superstar
                                     vi-tilde-fringe
                                     yasnippet-snippets)
    ;; Defines the behaviour of Spacemacs when installing packages.
