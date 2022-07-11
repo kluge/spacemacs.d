@@ -37,7 +37,6 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     asciidoc
      (auto-completion :variables
                       auto-completion-tab-key-behavior 'complete
                       auto-completion-return-key-behavior nil)
@@ -49,12 +48,9 @@ This function should only modify configuration layer settings."
      dash
      emacs-lisp
      evil-commentary
-     finance
      git
      graphviz
-     haskell
      ivy
-     javascript
      (lsp :variables
           lsp-enable-snippet nil
           lsp-ui-doc-position 'top)
