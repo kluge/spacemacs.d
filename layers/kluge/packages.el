@@ -11,6 +11,7 @@
                        modern-cpp-font-lock
                        org
                        projectile
+                       undo-tree
                        yasnippet))
 
 (defun kluge/post-init-avy ()
@@ -130,6 +131,10 @@
   ;; Use alien tools, but also follow .projectile ignores
   ;(setq projectile-indexing-method 'hybrid)
   )
+
+(defun kluge/post-init-undo-tree ()
+  ;; Don't pollute working tree with save files
+  (setq undo-tree-auto-save-history nil))
 
 (defun kluge/post-init-yasnippet ()
   (setq yas-snippet-dirs '("~/.spacemacs.d/snippets"))
